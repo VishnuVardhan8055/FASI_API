@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 app = FastAPI()
 @app.get("/")
 def home():
-    return "Hello welcome to the Home Page""For Crud Operations use /docs path "
+    return "Hello welcome to the Home Page. For Crud Operations use /docs path "
 
 @app.get("/books/", response_model=list[schema.Book])
 def get_all_books(db: Session = Depends(get_db)):
